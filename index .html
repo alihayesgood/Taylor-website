@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Taylor Swift | The Eras Tour 官方应援站</title>
+    <style>
+        :root {
+            --pink: #ffafcc;
+            --blue: #a2d2ff;
+            --purple: #cdb4db;
+            --dark: #2d3436;
+            --glass: rgba(255, 255, 255, 0.9);
+        }
+
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+        body { margin: 0; font-family: 'Segoe UI', system-ui, sans-serif; background: #fdf2f8; color: var(--dark); line-height: 1.6; }
+
+        /* --- 导航栏 --- */
+        nav { position: fixed; top: 0; width: 100%; background: var(--glass); backdrop-filter: blur(10px); padding: 15px 50px; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 20px rgba(0,0,0,0.05); }
+        nav .logo { font-weight: 900; font-size: 1.4rem; color: var(--pink); letter-spacing: 2px; }
+        nav .links a { margin-left: 25px; text-decoration: none; color: var(--dark); font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
+        nav .links a:hover { color: var(--pink); }
+
+        /* --- Hero Section --- */
+        header { height: 70vh; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&q=80&w=1920') center/cover; display: flex; align-items: center; justify-content: center; color: white; text-align: center; }
+        header h1 { font-size: 5rem; margin: 0; text-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 80px 20px; }
+
+        /* --- 个人介绍 --- */
+        .bio-section { display: flex; gap: 50px; background: white; padding: 50px; border-radius: 40px; box-shadow: 0 15px 50px rgba(0,0,0,0.05); margin-bottom: 100px; align-items: center; }
+        .bio-img { flex: 1; border-radius: 30px; overflow: hidden; height: 450px; }
+        .bio-img img { width: 100%; height: 100%; object-fit: cover; }
+        .bio-content { flex: 1.2; }
+        .bio-content h2 { font-size: 2.5rem; color: var(--pink); margin-top: 0; }
+        .stats { display: flex; gap: 20px; margin-top: 30px; }
+        .stat-item { background: #fef2f2; padding: 15px; border-radius: 20px; flex: 1; text-align: center; }
+        .stat-item strong { display: block; font-size: 1.5rem; }
+
+        /* --- 时代切换交互 --- */
+        .era-switcher { text-align: center; margin-bottom: 100px; }
+        .era-btns { margin-bottom: 40px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+        .era-btn { padding: 12px 25px; border-radius: 30px; border: 2px solid var(--pink); background: white; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .era-btn.active { background: var(--pink); color: white; }
+        .era-display { display: flex; background: white; border-radius: 30px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.08); min-height: 400px; }
+        .era-pic { flex: 1; background-size: cover; background-position: center; transition: 0.5s; }
+        .era-info { flex: 1; padding: 60px; text-align: left; }
+
+        /* --- 猜歌挑战 (音频增强) --- */
+        .quiz-section { background: var(--dark); color: white; padding: 80px 40px; border-radius: 50px; text-align: center; margin-top: 50px; }
+        .record-player { width: 150px; height: 150px; background: #333; border: 10px solid #222; border-radius: 50%; margin: 0 auto 30px; position: relative; }
+        .record-player.playing { animation: spin 3s linear infinite; }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .play-btn { width: 70px; height: 70px; border-radius: 50%; background: var(--pink); border: none; cursor: pointer; font-size: 24px; color: white; transition: 0.3s; }
+        .play-btn:hover { transform: scale(1.1); }
+        .quiz-input { padding: 15px 30px; width: 80%; max-width: 400px; border-radius: 30px; border: none; font-size: 1.1rem; margin: 30px 0; outline: none; }
+
+        @media (max-width: 800px) { .bio-section, .era-display { flex-direction: column; } .bio-img { width: 100%; height: 300px; } }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">TAYLOR SWIFT</div>
+    <div class="links">
+        <a href="#bio">关于她</a>
+        <a href="#eras">时代足迹</a>
+        <a href="#quiz">猜歌挑战</a>
+    </div>
+</nav>
+
+<header>
+    <h1>THE ERAS EXPERIENCE</h1>
+</header>
+
+<div class="container">
+    <section id="bio" class="bio-section">
+        <div class="bio-img">
+            <img src="https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?q=80&w=800" alt="Taylor Swift">
+        </div>
+        <div class="bio-content">
+            <h2>泰勒·斯威夫特</h2>
+            <p><strong>Taylor Swift</strong>，全球最具影响力的音乐人。她不仅在音乐上横跨乡村、流行、摇滚、民谣，更以其深刻的叙事性词曲创作赢得了全世界的尊重。她是史上唯一一位四次获得格莱美“年度专辑”奖的艺术家，更在2023年被《时代》周刊评为“年度人物”。</p>
+            <div class="stats">
+                <div class="stat-item"><strong>14</strong>格莱美奖</div>
+                <div class="stat-item"><strong>1.1B+</strong>身价(美元)</div>
+                <div class="stat-item"><strong>#1</strong>流媒体之王</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="eras" class="era-switcher">
+        <h2>选择一个时代</h2>
+        <div class="era-btns">
+            <button class="era-btn active" onclick="switchEra('Lover')">Lover</button>
+            <button class="era-btn" onclick="switchEra('Rep')">reputation</button>
+            <button class="era-btn" onclick="switchEra('Folklore')">folklore</button>
+        </div>
+        <div class="era-display">
+            <div id="era-pic" class="era-pic" style="background-image: url('https://images.unsplash.com/photo-1493225255756-d9584f8606e9?q=80&w=800');"></div>
+            <div class="era-info">
+                <h3 id="era-title">Lover Era</h3>
+                <p id="era-text">这是泰勒最浪漫、最灿烂的时代。充满了粉红色的云朵与真诚的告白，专辑探讨了爱的所有维度。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="quiz" class="quiz-section">
+        <h2>🎵 听歌识曲挑战</h2>
+        <div id="record" class="record-player"></div>
+        <div id="status">音频已加载，点击播放</div>
+        <button class="play-btn" onclick="togglePlay()" id="playBtn">▶</button>
+        <br>
+        <input type="text" id="ans" class="quiz-input" placeholder="请输入这首歌的英文名字">
+        <br>
+        <button class="era-btn" style="background: white; border: none; padding: 12px 40px;" onclick="check()">验证答案</button>
+        <button class="era-btn" style="background: transparent; color: white; border-color: #555;" onclick="newSong()">下一首</button>
+        <div id="feedback" style="margin-top: 20px; font-weight: bold;"></div>
+    </section>
+</div>
+
+<audio id="audio"></audio>
+
+<script>
+    // 时代切换数据
+    const eraData = {
+        'Lover': { t: "Lover Era", p: "https://images.unsplash.com/photo-1493225255756-d9584f8606e9?q=80&w=800", d: "这是泰勒最浪漫、最灿烂的时代。充满了粉红色的云朵与真诚的告白，专辑探讨了爱的所有维度。" },
+        'Rep': { t: "reputation Era", p: "https://images.unsplash.com/photo-1506157786151-b8491531f063?q=80&w=800", d: "在黑暗与争议中归来。这个时代标志着泰勒夺回了自己的叙事权，风格强悍且充满力量感。" },
+        'Folklore': { t: "folklore Era", p: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800", d: "在寂静的森林中，泰勒用叙事诗般的方式安抚了疫情下的世界。这是一个充满想象力与艺术性的民谣时代。" }
+    };
+
+    function switchEra(name) {
+        const data = eraData[name];
+        document.getElementById('era-title').innerText = data.t;
+        document.getElementById('era-text').innerText = data.d;
+        document.getElementById('era-pic').style.backgroundImage = `url('${data.p}')`;
+        document.querySelectorAll('.era-btn').forEach(b => b.classList.remove('active'));
+        event.target.classList.add('active');
+    }
+
+    // 猜歌数据 (使用更稳定的测试链接)
+    const songs = [
+        { n: "Blank Space", u: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" }, // 示例音频1
+        { n: "Shake It Off", u: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" }  // 示例音频2
+    ];
+
+    let current = 0;
+    const audio = document.getElementById('audio');
+
+    function newSong() {
+        current = Math.floor(Math.random()*songs.length);
+        audio.src = songs[current].u;
+        document.getElementById('feedback').innerText = "";
+        document.getElementById('ans').value = "";
+        document.getElementById('record').classList.remove('playing');
+        document.getElementById('playBtn').innerText = "▶";
+        document.getElementById('status').innerText = "点击播放试听";
+    }
+
+    function togglePlay() {
+        if(audio.paused) {
+            audio.play();
+            document.getElementById('record').classList.add('playing');
+            document.getElementById('playBtn').innerText = "⏸";
+        } else {
+            audio.pause();
+            document.getElementById('record').classList.remove('playing');
+            document.getElementById('playBtn').innerText = "▶";
+        }
+    }
+
+    function check() {
+        const user = document.getElementById('ans').value.trim().toLowerCase();
+        if(user === songs[current].n.toLowerCase()) {
+            document.getElementById('feedback').innerText = "✅ 答对了！太聪明了！";
+            document.getElementById('feedback').style.color = "#4ade80";
+        } else {
+            document.getElementById('feedback').innerText = "❌ 还没对哦，再听听？";
+            document.getElementById('feedback').style.color = "#f87171";
+        }
+    }
+
+    window.onload = newSong;
+</script>
+
+</body>
+</html>
