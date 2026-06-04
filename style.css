@@ -1,0 +1,152 @@
+/* 1. 默认全局变量（初始为默认优雅暗色调） */
+:root {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --accent-color: #f39c12;
+    --card-bg: #2a2a2a;
+    --blur-effect: blur(0px);
+    --font-style: 'Segoe UI', sans-serif;
+}
+
+/* 2. 不同专辑的画风与色调定义 */
+[data-theme="fearless"] {
+    --bg-color: #faf5e6;
+    --text-color: #634b15;
+    --accent-color: #d4af37;
+    --card-bg: #fffbf0;
+    --font-style: 'Georgia', serif;
+}
+
+[data-theme="1989"] {
+    --bg-color: #e6f4f8;
+    --text-color: #1e3a47;
+    --accent-color: #7bc0db;
+    --card-bg: #ffffff;
+    --font-style: 'Arial', sans-serif;
+}
+
+[data-theme="reputation"] {
+    --bg-color: #0d0d0d;
+    --text-color: #f5f5f5;
+    --accent-color: #7f8c8d;
+    --card-bg: #1a1a1a;
+    --font-style: 'Impact', Charcoal, sans-serif;
+    filter: contrast(1.1) grayscale(0.2); /* 带来硬朗、高对比度的画风 */
+}
+
+[data-theme="lover"] {
+    --bg-color: #fff0f5;
+    --text-color: #774c60;
+    --accent-color: #ffb6c1;
+    --card-bg: linear-gradient(180deg, #ffffff, #fff5f7);
+    --font-style: 'Courier New', monospace;
+}
+
+[data-theme="folklore"] {
+    --bg-color: #2b302a;
+    --text-color: #e3e7e1;
+    --accent-color: #707a6e;
+    --card-bg: #353c34;
+    --font-style: 'Garamond', serif;
+    --blur-effect: blur(1px); /* 带来森林薄雾般的微朦胧感 */
+}
+
+[data-theme="midnights"] {
+    --bg-color: #070b19;
+    --text-color: #cbd5e1;
+    --accent-color: #38bdf8;
+    --card-bg: #0f172a;
+    --font-style: 'Trebuchet MS', sans-serif;
+}
+
+/* 3. 基础布局与丝滑过渡过渡动效 */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-style);
+    margin: 0;
+    padding: 40px;
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* 核心：让所有色彩、字体的切换极其丝滑 */
+    backdrop-filter: var(--blur-effect);
+}
+
+/* 生涯墙与动态文字 */
+.bio-section {
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    text-align: center;
+}
+
+.animate-text {
+    font-size: 4rem;
+    letter-spacing: 5px;
+    animation: fadeInDown 1.2s ease;
+}
+
+/* 生涯时间线高级动效 */
+.timeline {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.timeline-item {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+}
+
+.timeline-item:hover {
+    transform: translateY(-5px); /* 悬浮时微微抬起 */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.timeline-item span {
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-right: 15px;
+}
+
+/* 专辑陈列网格 */
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.album-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.album-card:hover {
+    transform: scale(1.08); /* 弹性放大效果 */
+}
+
+.album-cover {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* 纯 CSS 动画预设 */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
