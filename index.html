@@ -3,53 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taylor Swift: The Eras Showcase</title>
+    <title>Taylor Swift: The Eras Universe</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <section class="bio-section">
-        <h1 class="animate-text">TAYLOR SWIFT</h1>
-        <p class="bio-text">从乡村音乐新星到全球流行巨星，她用歌词记录时代，用音乐重塑世界。欢迎来到她的音乐视界。</p>
+    <header class="main-header">
+        <h1 class="animate-title">TAYLOR SWIFT</h1>
+        <p class="subtitle">THE ERAS INTERACTIVE SHOWCASE</p>
+        <div class="header-line"></div>
+    </header>
+
+    <section class="section-container">
+        <h2 class="section-title">✨ 传奇歌手生涯墙 (The Biography Wall)</h2>
+        <p class="section-intro">从拿着吉他的宾夕法尼亚乡村少女，到打破无数历史纪录的全球乐坛天后。Taylor Swift 依靠无与伦比的词曲创作才华，用音乐筑起了一个属于她的时代帝国。</p>
         
-        <div class="timeline">
-            <div class="timeline-item"><span>2006</span> 乡村起步，首张同名专辑惊艳亮相</div>
-            <div class="timeline-item"><span>2014</span> 《1989》彻底转型全球流行天后</div>
-            <div class="timeline-item"><span>2020</span> 《Folklore》民谣回归，斩获格莱美年度专辑</div>
-            <div class="timeline-item"><span>2023-2026</span> Eras Tour 时代巡演，刷新历史音乐记录</div>
+        <div class="timeline-container">
+            <div class="timeline-card">
+                <div class="time-badge">2006 - 2008</div>
+                <h3>乡村新星的初声 🎸</h3>
+                <p>发行同名专辑与《Fearless》，凭借纯正乡村风音迅速风靡。年仅20岁便斩获格莱美最高荣誉“年度专辑”，成为当时史上最年轻的该奖项得主。</p>
+            </div>
+            
+            <div class="timeline-card">
+                <div class="time-badge">2010 - 2012</div>
+                <h3>全词曲创作与流行跨界 🌟</h3>
+                <p>独自一人完成了《Speak Now》全专词曲。随后《Red》大胆融入电子与流行元素，一首时长 10 分钟的《All Too Well》成为无数乐迷心中的白月光。</p>
+            </div>
+            
+            <div class="timeline-card">
+                <div class="time-badge">2014 - 2017</div>
+                <h3>统治世界的流行天后 🩵</h3>
+                <p>《1989》正式宣告全方位转型流行乐，全球销量狂飙，再次包揽格莱美。在经历全网舆论风暴后，她以神专《Reputation》暗黑涅槃回归，用蛇的意象狠狠反击全世界。</p>
+            </div>
+            
+            <div class="timeline-card">
+                <div class="time-badge">2019 - 2022</div>
+                <h3>浪漫彩虹与林间诗人的沉淀 🌲</h3>
+                <p>粉蓝梦幻的《Lover》大方宣告爱与包容。疫情期间，她化身林间隐士，连发《Folklore》和《Evermore》，用绝美的独立民谣讲故事，被全球乐评界封神。</p>
+            </div>
+
+            <div class="timeline-card">
+                <div class="time-badge">2022 - 2026+</div>
+                <h3>午夜狂欢与时代巡演的巅峰 🌌</h3>
+                <p>《Midnights》斩获第四座格莱美年度专辑，打破历史纪录；随后《TTPD》展现极致诗意。横跨数年的 Eras Tour（时代巡演）成为人类历史上票房最高的巡回演唱会，她自己本身，就是“时代”。</p>
+            </div>
         </div>
     </section>
 
-    <section class="album-section">
-        <h2>选择一个时代 (Select an Era)</h2>
+    <section class="section-container">
+        <h2 class="section-title">💿 时代光影陈列室 (Select An Era)</h2>
+        <p class="section-intro">点击下方任意一张专辑，整个主页的色调、字体、背景滤镜和视觉画风都会深度契合该专辑的艺术美学。</p>
+        
         <div class="album-grid">
             <div class="album-card" data-era="fearless">
-                <div class="album-cover" style="background: #e5c158;">📀</div>
+                <div class="vinyl-record">✨</div>
                 <h3>Fearless</h3>
+                <p class="album-meta">2008 / Country Pop</p>
             </div>
-            <div class="album-card" data-era="1989">
-                <div class="album-cover" style="background: #bce3f2;">🩵</div>
+            <div class="album-card" data-era="red">
+                <div class="vinyl-record" style="background: #801818; color: #fff;">🧣</div>
+                <h3>Red</h3>
+                <p class="album-meta">2012 / Pop Rock</p>
+            </div>
+            <div class="album-card" data-era="pop1989">
+                <div class="vinyl-record" style="background: #bce3f2;">🩵</div>
                 <h3>1989</h3>
+                <p class="album-meta">2014 / Synth-Pop</p>
             </div>
             <div class="album-card" data-era="reputation">
-                <div class="album-cover" style="background: #111111; color: #fff;">🐍</div>
+                <div class="vinyl-record" style="background: #111111; color: #fff;">🐍</div>
                 <h3>Reputation</h3>
+                <p class="album-meta">2017 / Electropop</p>
             </div>
             <div class="album-card" data-era="lover">
-                <div class="album-cover" style="background: linear-gradient(135deg, #fbc5d8, #bce3f2);">💖</div>
+                <div class="vinyl-record" style="background: linear-gradient(135deg, #fbc5d8, #bce3f2);">💖</div>
                 <h3>Lover</h3>
+                <p class="album-meta">2019 / Dream Pop</p>
             </div>
             <div class="album-card" data-era="folklore">
-                <div class="album-cover" style="background: #848a80;">🌲</div>
+                <div class="vinyl-record" style="background: #4d524b; color: #fff;">🌲</div>
                 <h3>Folklore</h3>
+                <p class="album-meta">2020 / Indie Folk</p>
             </div>
             <div class="album-card" data-era="midnights">
-                <div class="album-cover" style="background: #0f172a; color: #fff;">🌌</div>
+                <div class="vinyl-record" style="background: #0f172a; color: #fff;">🌌</div>
                 <h3>Midnights</h3>
+                <p class="album-meta">2022 / Midnight Pop</p>
+            </div>
+            <div class="album-card" data-era="ttpd">
+                <div class="vinyl-record" style="background: #e2ded8; color: #4a453f;">✍️</div>
+                <h3>TTPD</h3>
+                <p class="album-meta">2024 / Synth-Pop</p>
             </div>
         </div>
     </section>
+
+    <footer class="main-footer">
+        <p>Created for Swifties. Long Live The Magic.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
-</html>
+</html> 

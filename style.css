@@ -1,152 +1,294 @@
-/* 1. 默认全局变量（初始为默认优雅暗色调） */
+/* ==========================================================================
+   1. 初始优雅高阶暗色主题（默认）
+   ========================================================================== */
 :root {
-    --bg-color: #1a1a1a;
-    --text-color: #ffffff;
-    --accent-color: #f39c12;
-    --card-bg: #2a2a2a;
-    --blur-effect: blur(0px);
-    --font-style: 'Segoe UI', sans-serif;
+    --bg-color: #0f1115;
+    --text-color: #f3f4f6;
+    --accent-color: #a855f7;
+    --card-bg: #1f2937;
+    --card-hover-bg: #374151;
+    --blur-val: blur(0px);
+    --font-family: system-ui, -apple-system, sans-serif;
+    --card-border: 1px solid rgba(255,255,255,0.05);
 }
 
-/* 2. 不同专辑的画风与色调定义 */
+/* ==========================================================================
+   2. 各大时代（Eras）主题深度视觉画风定制
+   ========================================================================== */
+
+/* Fearless 时代：闪耀金色、古典乡村优雅 */
 [data-theme="fearless"] {
     --bg-color: #faf5e6;
-    --text-color: #634b15;
+    --text-color: #4a3710;
     --accent-color: #d4af37;
-    --card-bg: #fffbf0;
-    --font-style: 'Georgia', serif;
+    --card-bg: #fffbf2;
+    --card-hover-bg: #f5eedc;
+    --font-family: 'Garamond', 'Georgia', serif;
+    --card-border: 1px solid rgba(212,175,55,0.2);
 }
 
-[data-theme="1989"] {
-    --bg-color: #e6f4f8;
-    --text-color: #1e3a47;
-    --accent-color: #7bc0db;
-    --card-bg: #ffffff;
-    --font-style: 'Arial', sans-serif;
+/* Red 时代：秋日落叶红、高饱和、复古情绪 */
+[data-theme="red"] {
+    --bg-color: #2b0b0b;
+    --text-color: #fae8e8;
+    --accent-color: #e11d48;
+    --card-bg: #3f1414;
+    --card-hover-bg: #521c1c;
+    --font-family: 'Palatino', serif;
 }
 
-[data-theme="reputation"] {
-    --bg-color: #0d0d0d;
-    --text-color: #f5f5f5;
-    --accent-color: #7f8c8d;
-    --card-bg: #1a1a1a;
-    --font-style: 'Impact', Charcoal, sans-serif;
-    filter: contrast(1.1) grayscale(0.2); /* 带来硬朗、高对比度的画风 */
-}
-
-[data-theme="lover"] {
-    --bg-color: #fff0f5;
-    --text-color: #774c60;
-    --accent-color: #ffb6c1;
-    --card-bg: linear-gradient(180deg, #ffffff, #fff5f7);
-    --font-style: 'Courier New', monospace;
-}
-
-[data-theme="folklore"] {
-    --bg-color: #2b302a;
-    --text-color: #e3e7e1;
-    --accent-color: #707a6e;
-    --card-bg: #353c34;
-    --font-style: 'Garamond', serif;
-    --blur-effect: blur(1px); /* 带来森林薄雾般的微朦胧感 */
-}
-
-[data-theme="midnights"] {
-    --bg-color: #070b19;
-    --text-color: #cbd5e1;
+/* 1989 时代：海风霓虹蓝、都市清爽、明亮轻快 */
+[data-theme="pop1989"] {
+    --bg-color: #f0f9ff;
+    --text-color: #0f364a;
     --accent-color: #38bdf8;
-    --card-bg: #0f172a;
-    --font-style: 'Trebuchet MS', sans-serif;
+    --card-bg: #ffffff;
+    --card-hover-bg: #e0f2fe;
+    --font-family: 'Helvetica Neue', Arial, sans-serif;
+    --card-border: 1px solid rgba(56,189,248,0.2);
 }
 
-/* 3. 基础布局与丝滑过渡过渡动效 */
+/* Reputation 时代：硬核暗黑哥特、高对比、金属工业风 */
+[data-theme="reputation"] {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --accent-color: #94a3b8;
+    --card-bg: #111111;
+    --card-hover-bg: #222222;
+    --font-family: 'Impact', 'Arial Black', sans-serif;
+    filter: contrast(1.15) brightness(0.95);
+    --card-border: 1px solid #333;
+}
+
+/* Lover 时代：粉蓝糖果渐变、极其唯美浪漫 */
+[data-theme="lover"] {
+    --bg-color: #fff1f2;
+    --text-color: #651532;
+    --accent-color: #f472b6;
+    --card-bg: linear-gradient(135deg, #ffffff, #fff5f7);
+    --card-hover-bg: #ffe4e6;
+    --font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+/* Folklore 时代：深山幽居、雾气朦胧、低饱和墨绿木质感 */
+[data-theme="folklore"] {
+    --bg-color: #1c201b;
+    --text-color: #e2e8f0;
+    --accent-color: #86efac;
+    --card-bg: #242a23;
+    --card-hover-bg: #2e362d;
+    --font-family: 'Times New Roman', Times, serif;
+    --blur-val: blur(1.5px);
+}
+
+/* Midnights 时代：静谧午夜蓝、闪烁星光、华丽轻奢 */
+[data-theme="midnights"] {
+    --bg-color: #050814;
+    --text-color: #cbd5e1;
+    --accent-color: #60a5fa;
+    --card-bg: #0b1329;
+    --card-hover-bg: #1c2541;
+    --font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* TTPD 时代：学术风、高级冷灰色调、文艺克制 */
+[data-theme="ttpd"] {
+    --bg-color: #262522;
+    --text-color: #e5e5e0;
+    --accent-color: #a3a39e;
+    --card-bg: #302f2b;
+    --card-hover-bg: #3d3c37;
+    --font-family: 'Courier New', Courier, monospace;
+}
+
+/* ==========================================================================
+   3. 核心精美页面布局与高级动效
+   ========================================================================== */
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: var(--font-style);
+    font-family: var(--font-family);
     margin: 0;
-    padding: 40px;
-    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* 核心：让所有色彩、字体的切换极其丝滑 */
-    backdrop-filter: var(--blur-effect);
+    padding: 0;
+    transition: all 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+    overflow-x: hidden;
 }
 
-/* 生涯墙与动态文字 */
-.bio-section {
-    max-width: 800px;
-    margin: 0 auto 60px auto;
+/* 顶部大标题设计 */
+.main-header {
     text-align: center;
+    padding: 80px 20px 40px 20px;
 }
 
-.animate-text {
-    font-size: 4rem;
-    letter-spacing: 5px;
-    animation: fadeInDown 1.2s ease;
+.animate-title {
+    font-size: 4.5rem;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: 12px;
+    transition: letter-spacing 0.5s ease;
 }
 
-/* 生涯时间线高级动效 */
-.timeline {
-    margin-top: 30px;
+.subtitle {
+    font-size: 1rem;
+    letter-spacing: 4px;
+    opacity: 0.7;
+    margin-top: 10px;
+}
+
+.header-line {
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin: 25px auto 0 auto;
+    transition: background-color 0.5s;
+}
+
+/* 板块通用容器 */
+.section-container {
+    max-width: 1100px;
+    margin: 0 auto 80px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2rem;
+    border-bottom: 2px solid var(--card-bg);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    transition: border-color 0.5s;
+}
+
+.section-intro {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    opacity: 0.8;
+    margin-bottom: 40px;
+}
+
+/* 4. 生涯墙高级时间轴卡片 */
+.timeline-container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 25px;
+    border-left: 3px solid var(--accent-color);
+    padding-left: 30px;
+    margin-left: 10px;
+    transition: border-color 0.5s;
 }
 
-.timeline-item {
+.timeline-card {
     background: var(--card-bg);
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transform: translateY(0);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: default;
+    border: var(--card-border);
+    padding: 25px;
+    border-radius: 16px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: translateX(0);
+    transition: transform 0.4s ease, background-color 0.5s, box-shadow 0.4s;
 }
 
-.timeline-item:hover {
-    transform: translateY(-5px); /* 悬浮时微微抬起 */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+.timeline-card:hover {
+    transform: translateX(10px);
+    background: var(--card-hover-bg);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
 }
 
-.timeline-item span {
+/* 时间卡片前面的发光核心小圆点 */
+.timeline-card::before {
+    content: '';
+    position: absolute;
+    left: -38px;
+    top: 30px;
+    width: 12px;
+    height: 12px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-color);
+    transition: background 0.5s, box-shadow 0.5s;
+}
+
+.time-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--accent-color);
+    color: #fff;
     font-weight: bold;
-    color: var(--accent-color);
-    margin-right: 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+    transition: background 0.5s;
 }
 
-/* 专辑陈列网格 */
+.timeline-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.4rem;
+}
+
+.timeline-card p {
+    margin: 0;
+    line-height: 1.7;
+    opacity: 0.85;
+    font-size: 1rem;
+}
+
+/* 5. 专辑陈列房双排网格 */
 .album-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 25px;
-    margin-top: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
 }
 
 .album-card {
     background: var(--card-bg);
-    border-radius: 12px;
-    padding: 15px;
+    border: var(--card-border);
+    border-radius: 20px;
+    padding: 25px;
     text-align: center;
     cursor: pointer;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.5s;
 }
 
 .album-card:hover {
-    transform: scale(1.08); /* 弹性放大效果 */
+    transform: scale(1.06) translateY(-5px);
 }
 
-.album-cover {
-    width: 100%;
-    aspect-ratio: 1;
-    border-radius: 8px;
+/* 唱片黑胶悬浮效果 */
+.vinyl-record {
+    width: 110px;
+    height: 110px;
+    background: #e5c158;
+    color: #333;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
-    margin-bottom: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    font-size: 3.5rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: transform 0.6s ease;
 }
 
-/* 纯 CSS 动画预设 */
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+.album-card:hover .vinyl-record {
+    transform: rotate(360deg); /* 悬浮时黑胶唱片炫酷旋转一圈 */
+}
+
+.album-card h3 {
+    margin: 10px 0 5px 0;
+    font-size: 1.25rem;
+}
+
+.album-meta {
+    margin: 0;
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
+/* 页脚 */
+.main-footer {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 0.9rem;
+    opacity: 0.5;
+    border-top: 1px solid var(--card-bg);
 }
