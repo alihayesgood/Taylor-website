@@ -291,53 +291,93 @@ body {
     font-size: 0.9rem;
     opacity: 0.5;
     border-top: 1px solid var(--card-bg);
-}  ## 🎨 第二步：更新样式 (`style.css`)
-
-为了让新增的导航栏在所有页面里看起来都非常高级、悬浮、有科技感，我们需要在 `style.css` 的**最底部**追加以下这段样式：
-
-```css
-/* ==========================================================================
-   4. 新增的全局高级顶部导航栏样式
+}  /* ==========================================================================
+   🚀 终极版：大师级沉浸式霓虹导航栏 (The Premium Eras Navbar)
    ========================================================================== */
+
+/* 导航栏整体：全屏横向融为一体，自带高级渐变与毛玻璃 */
 .nav-bar {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px); /* 高级毛玻璃效果 */
+    justify-content: center; /* 居中排列 */
+    align-items: center;
+    padding: 25px 0;
+    /* 核心：半透明黑色到透明的渐变，完美融入背景顶部 */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 70%, transparent 100%);
+    backdrop-filter: blur(12px); /* 苹果级高级毛玻璃模糊 */
+    -webkit-backdrop-filter: blur(12px);
     position: sticky;
     top: 0;
-    z-index: 999;
-    border-bottom: var(--card-border);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03); /* 极细微弱的底边线 */
+    transition: all 0.5s ease;
 }
 
+/* 导航栏内的“胶囊太空舱”按钮容器 */
 .nav-bar a {
     color: var(--text-color);
     text-decoration: none;
     font-size: 1.05rem;
-    font-weight: 600;
-    padding: 8px 16px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-    opacity: 0.7;
+    font-weight: 700;
+    letter-spacing: 2px; /* 字体拉开高级间距 */
+    padding: 12px 28px;
+    margin: 0 15px; /* 按钮之间的呼吸间距 */
+    border-radius: 50px; /* 完美的胶囊圆角 */
+    background: rgba(255, 255, 255, 0.03); /* 极轻微的胶囊底色 */
+    border: 1px solid rgba(255, 255, 255, 0.08); /* 胶囊的精致边框 */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* 顶级丝滑动效 */
+    opacity: 0.75;
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.1);
 }
 
+/* 鼠标滑过（Hover）时的颠覆性高级特效 */
 .nav-bar a:hover {
     opacity: 1;
-    background: var(--card-bg);
-    transform: translateY(-2px);
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--accent-color); /* 边框瞬间变成当前时代的专属色 */
+    transform: translateY(-3px) scale(1.04); /* 微微弹起并轻微放大 */
+    /* 灵魂：向外散发出带有当前时代色彩的霓虹光晕 */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 15px var(--accent-color); 
 }
 
-/* 当前所在页面的高亮亮色状态 */
+/* 鼠标按下时的微弱反馈 */
+.nav-bar a:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+/* 🌟 当前所在页面的“至尊高亮状态” */
 .nav-bar a.active {
     opacity: 1;
-    background: var(--accent-color);
     color: #ffffff !important;
-    box-shadow: 0 4px 15px var(--accent-color);
+    background: var(--accent-color); /* 填满当前时代的主题色彩 */
+    border-color: transparent;
+    font-weight: 800;
+    /* 发出极其科幻、强烈的全局霓虹倒影，极具存在感 */
+    box-shadow: 0 8px 25px var(--accent-color), 
+                inset 0 2px 2px rgba(255,255,255,0.2);
+    transform: translateY(0);
 }
 
-/* 歌曲页面专用间距 */
+/* 按钮内部的装饰性微小动效：增加光影流转感 */
+.nav-bar a::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -50%;
+    width: 30%; height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent);
+    transform: skewX(-25deg);
+    transition: 0.75s;
+}
+.nav-bar a:hover::after {
+    left: 150%; /* 鼠标放上去时，会有一道隐约的光流闪过按钮 */
+}
+
+/* ==========================================================================
+   🎵 音乐列表与小故事的高级间距修饰
+   ========================================================================== */
 .music-list {
     display: flex;
     flex-direction: column;
@@ -348,4 +388,5 @@ body {
     padding-top: 12px;
     border-top: 1px dashed rgba(255,255,255,0.1);
     font-style: italic;
+    opacity: 0.8;
 }
